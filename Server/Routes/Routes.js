@@ -6,6 +6,7 @@ env.config({
     path:".env"
 })
 const SignUpModel = require("../Models/SignUpModel")
+const Authorization = require("../Middleware/Auth")
 const router=express.Router()
 const secret=process.env.SECRET
 
@@ -100,4 +101,28 @@ router.post("/api/login",async(req,res)=>
         })
     }
 })
+router.get("/api/userdash",Authorization,async(req,res)=>
+{
+    try {
+        const token=req.headers?.authorization?.split(" ").pop()
+        if(token)
+        {
+            let decoded=jwt.decode(token,secret)
+            if(decoded.role==="user")
+            {
+                let existinguser=await SignUpModel.findById(decoded._id)
+                console.log(existinguser)
+                
+                return res.send({
+                    message:"Access Granted",
+                    data:existinguser
+                })
+            }
+            return res.send("Access Denied")
+        }
+    } catch (error) {
+        return res.status(400).send(error)
+    }
+})
+
 module.exports=router

@@ -19,6 +19,7 @@ const Login=()=>
                 localStorage.setItem("authtoken",res.data.token)
                 localStorage.setItem("username",res.data.name)
                 alert("The login is successfull")
+                navigate("/")
             }
             else
             {
@@ -36,7 +37,7 @@ const Login=()=>
             }}>User SignUp</button>
             <button onClick={()=>
             {
-                navigate("/adminsignup")
+                navigate("/verifyadmin")
             }}>Admin SignUp</button><br/>
             <label>Email</label><br/>
             <input type="email" placeholder="Enter your email" onChange={(e)=>
