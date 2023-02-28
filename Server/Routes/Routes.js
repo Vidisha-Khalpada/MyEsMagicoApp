@@ -111,7 +111,7 @@ router.get("/api/userdash",Authorization,async(req,res)=>
             if(decoded.role==="user")
             {
                 let existinguser=await SignUpModel.findById(decoded._id)
-                console.log(existinguser)
+                
                 
                 return res.send({
                     message:"Access Granted",
@@ -122,6 +122,43 @@ router.get("/api/userdash",Authorization,async(req,res)=>
         }
     } catch (error) {
         return res.status(400).send(error)
+    }
+})
+
+router.get("/api/admindash",Authorization,async(req,res)=>
+{
+    try {
+        const token=req.headers?.authorization?.split(" ").pop()
+        if(token)
+        {
+            let decoded=jwt.decode(token,secret)
+            if(decoded.role==="admin")
+            {
+                let existinguser=await SignUpModel.find({})
+                
+                return res.send({
+                    message:"Access Granted",
+                    data:existinguser
+                })
+            }
+            return res.send("Access Denied")
+        }
+    } catch (error) {
+        return res.status(400).send(error)
+    }
+})
+router.post("/api/edituser",Authorization,async(req,res)=>
+{
+    try {
+        let {id}=req.body
+        await SignUpModel.findByIdAndUpdate(id,req.body)
+        return res.send({
+            message:"The data is updated"
+        })
+    } catch (error) {
+        res.status(400).send({
+            message:error
+        })
     }
 })
 

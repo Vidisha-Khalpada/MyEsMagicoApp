@@ -9,7 +9,7 @@ const AdminSignUp=()=>
     const navigate =useNavigate()
     const SubmitData=()=>
     {
-        axios.post(`${url}/api/usersignup`,input,{
+        axios.post(`${url}/api/adminsignup`,input,{
             headers:{
                 "Content-Type":"application/json"
             }
