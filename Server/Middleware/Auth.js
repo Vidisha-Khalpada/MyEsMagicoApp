@@ -7,6 +7,7 @@ const secret=process.env.SECRET
 const Authorization=(req,res,next)=>
 {
     const token=req.headers?.authorization?.split(" ").pop()
+    
     if(token)
     {
         const decoded=jwt.verify(token,secret)

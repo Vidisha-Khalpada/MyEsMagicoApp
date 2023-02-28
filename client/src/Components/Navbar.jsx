@@ -15,7 +15,7 @@ const Navbar=()=>
         }
     },[login])
     return(
-        <div>
+        <div id="navbar">
             <Link to="/">Home</Link>
             <Link to="/userdashboard">Users</Link>
             <Link to="/admindashboard">Admin</Link>

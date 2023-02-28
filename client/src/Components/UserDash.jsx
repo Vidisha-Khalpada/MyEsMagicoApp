@@ -17,7 +17,6 @@ const UserDash=()=>
             }
         }).then((res)=>
         {
-           console.log(res)
            if(res.data.message=="The data is updated")
            {
             alert("The data has been updated...")

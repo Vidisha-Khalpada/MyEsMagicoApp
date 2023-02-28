@@ -161,5 +161,39 @@ router.post("/api/edituser",Authorization,async(req,res)=>
         })
     }
 })
+router.post("/api/searchdata",async(req,res)=>
+{
+    console.log(req.body.data)
+    try {
+        let existinguser=await SignUpModel.find({name: new RegExp(req.body.data,'i')})
+        if(existinguser.length==0)
+        {
+            existinguser=await SignUpModel.find({email:req.body.data})
+            if(existinguser.length==0)
+            {
+                return res.send({
+                    message:"No users found"
+                })
+            }
+            else
+            {
+                return res.send({
+                    message:"Data Found",
+                    data:existinguser
+                })
+            }
+        }
+        else
+        {
+            return res.send({
+                data:existinguser
+            })
+        }
+    } catch (error) {
+        return res.status(400).send({
+            error
+        })
+    }
+})
 
 module.exports=router
