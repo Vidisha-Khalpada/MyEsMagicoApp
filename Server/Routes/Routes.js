@@ -9,7 +9,7 @@ const SignUpModel = require("../Models/SignUpModel")
 const router=express.Router()
 const secret=process.env.SECRET
 
-router.post("api/usersignup",async(req,res)=>
+router.post("/api/usersignup",async(req,res)=>
 {
     try {
         let {name,email,password}=req.body
@@ -37,7 +37,7 @@ router.post("api/usersignup",async(req,res)=>
     }
 })
 
-router.post("api/adminsignup",async(req,res)=>
+router.post("/api/adminsignup",async(req,res)=>
 {
     try {
         let {name,email,password}=req.body
@@ -65,7 +65,7 @@ router.post("api/adminsignup",async(req,res)=>
     }
 })
 
-router.post("api/login",async(req,res)=>
+router.post("/api/login",async(req,res)=>
 {
     try {
         let{email,password}=req.body

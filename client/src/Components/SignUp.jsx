@@ -1,11 +1,30 @@
 import { useState } from "react"
+import axios from "axios"
+import { useNavigate } from "react-router-dom"
+const url=process.env.REACT_APP_URL
 
 const SignUp=()=>
 {
-    
     let[input,setinput]=useState({name:"",email:"", password:""})
+    const navigate =useNavigate()
     const SubmitData=()=>
     {
+        axios.post(`${url}/api/usersignup`,input,{
+            headers:{
+                "Content-Type":"application/json"
+            }
+        }).then((res)=>{
+            if(res.data.message=="Signup Successfull")
+            {
+                alert("The user has successfully Signed Up..")
+                navigate("/login")
+            }
+            else if(res.data.message=="The user is already registered.")
+            {
+                alert("The user is already registered.. Please continue to login")
+                navigate("/login")
+            }
+        })
         
     }
     return(
@@ -24,7 +43,7 @@ const SignUp=()=>
             <input type="password" placeholder="Enter your password" onChange={(e)=>
             {
                 setinput({...input,password:e.target.value})
-            }}/>
+            }}/><br/>
             <button onClick={SubmitData}>Submit</button>
         </div>
     )
