@@ -24,11 +24,15 @@ const SignUp=()=>
                 alert("The user is already registered.. Please continue to login")
                 navigate("/login")
             }
+            else
+            {
+                alert("Enter correct credentials")
+            }
         })
         
     }
     return(
-        <div>
+        <div id="usersignup">
             <label>Name</label><br/>
             <input type="text" placeholder="Enter your name" onChange={(e)=>
             {

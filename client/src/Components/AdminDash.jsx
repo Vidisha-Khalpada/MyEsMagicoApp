@@ -98,7 +98,7 @@ const AdminDash=()=>
                     SearchData()
                 }}>SearchData</button>
             </div>
-            <div>
+            <div id="admindash">
                 {
                     userdata.map((ele,i)=>
                     {

@@ -2,14 +2,89 @@
 {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   padding: 20px;
   background-color: wheat;
   font-weight: bold;
   font-size: 20px;
 }
+#homediv
+{
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+}
+#homediv button
+{
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px;
+  background-color: bisque;
+  border: 0px;
+  cursor: pointer;
+}
 #navbar button
 {
   padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+#loginpanel,#usersignup,#adminpanel
+{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 2.0;
+  width: 30%;
+  margin: auto;
+  margin-top: 50px;
+}
+#loginpanel button, #loginpanel input, #usersignup button, #usersignup input, #adminpanel button, #adminpanel input
+{
+  padding: 10px;
+  font-size: 18px;
+  margin: 10px;
+  background-color: bisque;
+  border: none;
+}
+#userdash
+{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 2.0;
+  width: 30%;
+  margin: auto;
+  margin-top: 50px;
+}
+#userdash button, #userdash input
+{
+  padding: 10px;
+  font-size: 18px;
+  margin: 10px;
+  background-color: bisque;
+  border: none;
+}
+#admindash div
+{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 2.0;
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+}
+#admindash
+{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
 }
 body {
   margin: 0;

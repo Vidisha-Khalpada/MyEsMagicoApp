@@ -1,12 +1,15 @@
 import { useState } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
+import {useDispatch} from "react-redux"
+import Action from "../Redux/Action"
 
 const url=process.env.REACT_APP_URL
 const Login=()=>
 {
     const[input,setinput]=useState({email:"",password:""})
     const navigate=useNavigate()
+    const dispatch=useDispatch()
     const SubmitData=()=>
     {
         axios.post(`${url}/api/login`,input,{
@@ -18,6 +21,7 @@ const Login=()=>
             {
                 localStorage.setItem("authtoken",res.data.token)
                 localStorage.setItem("username",res.data.name)
+                Action({isloggedin:true},dispatch)
                 alert("The login is successfull")
                 navigate("/")
             }
@@ -29,7 +33,7 @@ const Login=()=>
     }
     
     return(
-        <div>
+        <div id="loginpanel">
             <h2>Login</h2>
             <button onClick={()=>
             {

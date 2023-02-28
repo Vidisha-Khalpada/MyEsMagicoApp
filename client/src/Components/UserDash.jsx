@@ -65,7 +65,7 @@ const UserDash=()=>
     if(ag)
     {
         return(
-            <div>
+            <div id="userdash">
                 <h4>Name: {userdata.name}</h4>
                 <button onClick={()=>{
                     setvis({...vis,name:true})
