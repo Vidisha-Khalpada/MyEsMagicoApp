@@ -1,9 +1,25 @@
 # MyEsMagicoApp
+The EsMagicodemoapp is  the app which provides basic functionalities on user and admin panels. It is developed using MERN TechStack. The features include:
+Home Page,
+Login Signup and Logout,
+Admin Page and
+User Page.
+
+The deployed Link:
+https://mydemoapp-jade.vercel.app/
+
+
 Home Page:
-![image](https://user-images.githubusercontent.com/103308419/221874559-26b1e465-ae36-4a44-895d-e31c791d557e.png)
+![image](https://user-images.githubusercontent.com/103308419/221909987-86c9db09-9711-47cd-8868-eef333d6dbd4.png)
+
 The Login and SignUp Page:
-![image](https://user-images.githubusercontent.com/103308419/221875296-6e7f9006-5d8e-43ba-8285-f5c0ec50c595.png)
+![image](https://user-images.githubusercontent.com/103308419/221910200-77794edb-2581-41e3-9df3-d822030c3146.png)
+
 The user page:
-![image](https://user-images.githubusercontent.com/103308419/221875524-38fffc92-1fa9-49a1-b741-ae6716d53341.png)
+![image](https://user-images.githubusercontent.com/103308419/221910401-633fdad6-5c9e-466e-8436-6bd79478ea32.png)
+
 The admin page:
+![image](https://user-images.githubusercontent.com/103308419/221910632-d8a5aa00-9274-4df0-9e84-05de23c7205c.png)
+
+
 
