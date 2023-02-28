@@ -5,9 +5,11 @@ Login Signup and Logout,
 Admin Page and
 User Page.
 
-The deployed Link:
+The deployed Link for frontend:
 https://mydemoapp-jade.vercel.app/
 
+The deployed link for backend:
+https://vast-pink-pelican-veil.cyclic.app/
 
 Home Page:
 ![image](https://user-images.githubusercontent.com/103308419/221909987-86c9db09-9711-47cd-8868-eef333d6dbd4.png)
